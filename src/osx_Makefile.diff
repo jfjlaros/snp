@@ -1,0 +1,10 @@
+--- Makefile.orig	2008-04-30 09:03:17.000000000 +0200
++++ Makefile	2008-04-30 08:59:57.000000000 +0200
+@@ -1,6 +1,6 @@
+ CC = gcc
+ CFLAGS = -Wall -O3
+-LFLAGS = -lexpat
++LFLAGS = -lexpat -I/sw/include -L/sw/lib
+ 
+ EXEC = snp
+ MAIN = snp.c
