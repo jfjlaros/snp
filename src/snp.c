@@ -14,7 +14,8 @@ int count,    // Counter for the number of alleles.
     skip = 0;
 
 float minFreq,             // The minimum frequency of an allele.
-      FreqThreshold = 0.0; // The threshold of the minimum frequency.
+      FreqThreshold = 0.0, // The threshold of the minimum frequency.
+      correction;          // Correction needed for '0' alleles.
 
 static void XMLCALL start(void *data, const char *el, const char **attr) {
   float temp;
@@ -25,17 +26,22 @@ static void XMLCALL start(void *data, const char *el, const char **attr) {
     strcpy(popId, attr[1]);
     count = 0;
     minFreq = 1.0;
+    correction = 0.0;
   }//if
   if (!strcmp(el, "AlleleFreq")) {
     if ((attr[1][0] == '-') || (attr[1][1] != '\0'))
       skip = 1;
-    if ((attr[1][0] != '(') && (attr[1][0] != 'N') && !skip) {
-      Allele[count] = attr[1][0];
-      temp = atof(attr[3]);
-      if (temp < minFreq)
-        minFreq = temp;
-      count++;
+    if (attr[1][0] != '0') {
+      if ((attr[1][0] != '(') && (attr[1][0] != 'N') && !skip) {
+        Allele[count] = attr[1][0];
+        temp = atof(attr[3]);
+        if (temp < minFreq)
+          minFreq = temp;
+        count++;
+      }//if
     }//if
+    else
+      correction = atof(attr[3]);
   }//if
 }//start
 
@@ -43,6 +49,7 @@ static void XMLCALL end(void *data, const char *el) {
   int i;
 
   if (!strcmp(el, "ByPop")) {
+    minFreq /= (1.0 - correction);
     if ((count > 2) && (minFreq >= FreqThreshold) && !skip) {
       printf("rsId: %s, popId: %s, minFreq: %f, ", rsId, popId, minFreq);
       for (i = 0; i < count; i++)
