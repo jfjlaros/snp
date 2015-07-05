@@ -1,0 +1,21 @@
+<GenoExchange>
+    <SnpInfo rsId="1">
+        <SsInfo>
+            <ByPop popId="1">
+                <AlleleFreq allele="A" freq="0.70"/>
+                <AlleleFreq allele="G" freq="0.20"/>
+                <AlleleFreq allele="T" freq="0.10"/>
+            </ByPop>
+        </SsInfo>
+    </SnpInfo>
+    <SnpInfo rsId="2">
+        <SsInfo>
+            <ByPop popId="1">
+                <AlleleFreq allele="A" freq="0.5845"/>
+                <AlleleFreq allele="G" freq="0.1670"/>
+                <AlleleFreq allele="T" freq="0.0835"/>
+                <AlleleFreq allele="0" freq="0.1650"/>
+            </ByPop>
+        </SsInfo>
+    </SnpInfo>
+</GenoExchange>
