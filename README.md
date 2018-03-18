@@ -4,7 +4,7 @@ non-biallelic SNPs are of interest for identification purposes; to have the
 same discriminative power, more biallelic than non-biallelic SNPs are required.
 
 In this project, we present a tool that uses the
-[NCBI](http://www.ncbi.nlm.nih.gov/) a public database
+[NCBI](http://www.ncbi.nlm.nih.gov/) public database
 [dbSNP](https://www.ncbi.nlm.nih.gov/projects/SNP/) to identify non-biallelic
 SNPs.
 
@@ -25,7 +25,7 @@ Compile the program:
 ## Usage
 The program requires a dump of the database in XML format. These files are
 typically found in the subfolder named `genotype` of any of the builds hosted
-on the [download site](ftp://ftp.ncbi.nih.gov/snp/organisms/) of the NCBI.
+on the [download site](https://ftp.ncbi.nih.gov/snp/organisms/) of the NCBI.
 
 For a file named `gt_chrXX.xml.gz`, use the following command to find the SNP
 candidates:
