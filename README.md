@@ -17,8 +17,10 @@ Install the [expat](http://expat.sourceforge.net/) development files:
 
     apt-get install libexpat1-dev
 
-Compile the program:
+Retrieve the source code and compile the program:
 
+    git clone https://github.com/jfjlaros/snp.git
+    cd snp/src
     make
 
 
