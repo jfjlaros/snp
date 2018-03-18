@@ -11,6 +11,7 @@ frequencies is as follows:
 where r is the real allele frequency of X and o is the observed allele
 frequency of X.
 
+
 ## Example: biallelic SNP
 We start with a given allele frequency:
 
@@ -63,7 +64,6 @@ This results in the following genotype frequencies:
     GG: 0.04
     GT: 0.04
     TT: 0.01
-
 
 And if we mix the populations, the genotype frequencies become:
 
